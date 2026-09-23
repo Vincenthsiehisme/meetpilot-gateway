@@ -1,0 +1,22 @@
+{
+  "name": "meetpilot-gateway",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "lint": "tsc --noEmit",
+    "test": "vitest run",
+    "invite": "tsx scripts/invite.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.6",
+    "tsx": "^4.23.15",
+    "typescript": "~5.8.2",
+    "vitest": "^5.0.1"
+  },
+  "dependencies": {
+    "@vercel/blob": "^2.8.0"
+  }
+}

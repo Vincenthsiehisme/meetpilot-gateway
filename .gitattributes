@@ -1,0 +1,2 @@
+# 跟 MeetPilot 同一條：文字檔一律 LF，Windows 上 clone 的人跑腳本不會把 invites.json 改成 CRLF
+* text=auto eol=lf

@@ -1,0 +1,6 @@
+node_modules
+# 本機環境變數（GATEWAY_TOKEN_SECRET、GEMINI_API_KEY）只放 Vercel 的 Environment Variables
+.env
+.env.*
+.vercel
+.DS_Store
