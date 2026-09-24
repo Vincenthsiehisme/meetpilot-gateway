@@ -27,11 +27,11 @@ Gemini 由 app 直接呼叫。設計與取捨在 vault 的 `MeetPilot · 跨平�
 pathname `roster/people.json`，內容 `{ version: 1, rows }`。rows 的欄位由 MeetPilot 定義，發布也由 MeetPilot 做：
 
 ```bash
-# 在 MeetPilot repo 裡
-BLOB_READ_WRITE_TOKEN=<token> npx tsx scripts/publishRoster.ts <csv-path>
+# 在 MeetPilot repo 裡，macOS 與 Windows 同一行
+npx tsx scripts/publishRoster.ts <csv-path>
 ```
 
-那支腳本用 MeetPilot 的 CSV 解析整份驗過才上傳。gateway 只驗外殼（版本、rows 是非空陣列、每筆是物件），
+那支腳本用 MeetPilot 的 CSV 解析整份驗過，才提示貼上 Blob token（輸入不顯示、不進 shell history）再上傳。gateway 只驗外殼（版本、rows 是非空陣列、每筆是物件），
 原樣轉交。讀的時候 `useCache: false`，發布完下一次請求就拿到新名單，不用重新部署。pathname 與 version
 是兩個 repo 之間的契約，常數在這裡的 `lib/roster.ts` 與 MeetPilot 的 `services/rosterDocument.ts`，改一邊要改另一邊。
 
